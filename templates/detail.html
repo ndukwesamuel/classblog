@@ -12,9 +12,11 @@
   <p> {{post.body}}</p>
   <div> 
     <a class="btn btn-primary" href="{% url 'updatetview' post.pk   %}">edit</a>
+
     
-<!--             
-    <a class="btn btn-danger" href="{% url 'deletepost' post.pk   %}">delete</a> -->
+            
+    <a class="btn btn-danger" href="{% url 'deletepost' post.pk   %}">delete</a>
+    <small> {{post.post_date}}</small>
   </div>
 </div>
 
