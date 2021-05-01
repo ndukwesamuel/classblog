@@ -3,31 +3,19 @@
 
 {% block content %}
 {% load static %}
+<div class="landing">
+  <h2> <a href="{% url 'Blogdetail' post.pk   %}" >{{post.title}}</a> </h2>
+  
+  
+  <h3>  {{post.aurthor}}</h3>
+  
+  <p> {{post.body}}</p>
+  <div> 
+    <a class="btn btn-primary" href="{% url 'updatetview' post.pk   %}">edit</a>
     
-<h1> {{post.title}}</h1>
-
-<div>{{post.body}}</div>
-
-<div>{{post.aurthor}}</div>
-
-
-<a href="{% url 'updatetview' post.pk   %}">edit</a>
-
-<a href="">  {{post.title}}</a>
-
-
-<h1>  {{post.aurthor}}</h1>
-
-<h3> {{post.body}}</h3>
-<div>
-  
-  <a href="{% url 'updatetview' post.pk   %}">edit</a>
-
-  
-  <a href="{% url 'deletepost' post.pk   %}">delete</a>
+<!--             
+    <a class="btn btn-danger" href="{% url 'deletepost' post.pk   %}">delete</a> -->
+  </div>
 </div>
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur corrupti nobis recusandae aspernatur eum, perferendis esse sint molestiae similique earum quia ipsum,
-
 
 {% endblock content %}
