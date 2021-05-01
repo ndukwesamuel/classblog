@@ -5,41 +5,55 @@
 {% load static %}
 
 
-  <div class="row">
 
+
+
+<div class="row">
     <div class=" col-md-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptates exercitationem earum ut id, voluptate voluptatum ipsa cumque facilis quas quod, consequuntur provident nobis nam velit culpa neque aspernatur nihil. </div>
-  <div class=" col-md-6">
+      <h1>things to know</h1> 
+       
+      <ul>
+        <li> you can only edit and delet the blog you post</li>
 
+      </ul>
+     
+      </div>
+  
+      <div class=" col-md-6">
+         {%for post in object_list%}
+              <div class="landing">
+                  <h2> <a href="{% url 'Blogdetail' post.pk   %}" >{{post.title}}</a> </h2>
+                  
+                  
+                  <h3>  {{post.aurthor}}</h3>
 
-      {%for post in object_list%}
-      <div class="landing">
-          <h2> <a href="{% url 'Blogdetail' post.pk   %}" >{{post.title}}</a> </h2>
-          
-          
-          <h3>  {{post.aurthor}}</h3>
-          
-          <p> {{post.body}}</p>
-          <div> 
-            <small> {{post.post_date}}</small>
-            
-<!--             
-            <a class="btn btn-danger" href="{% url 'deletepost' post.pk   %}">delete</a> -->
-          </div>
-        </div>
-      {%endfor%}
+                  <h3>  {{post.aurthor.id}}</h3>
+                  
+                  <p> {{post.body |slice:":200"}}</p>
+                  <div> 
+                    <small> {{post.post_date}}</small>
+                    
 
- 
-      
+        <!--           |  
+                    <a class="btn btn-danger" href="{% url 'deletepost' post.pk   %}">delete</a> -->
+                  </div>
+              </div>
+          {%endfor%}
     </div>
+
+
     <div class=" col-md-3"> 
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro excepturi aperiam molestias at ex modi illum nesciunt labore veniam dolore, quaerat perferendis rerum dignissimos officia nemo, dolorem voluptatum provident voluptates.
+       <h1>things to know</h1> 
+       
+       <ul>
+         <li> you can only edit and delet the blog you post</li>
+
+       </ul>
+    
     </div>
   
   
   </div>
-
-
 {% endblock content %}
 
 

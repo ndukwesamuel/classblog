@@ -3,6 +3,10 @@ from django.db import models
 from django.urls import reverse
 from  datetime import datetime, date
 
+
+# class category(models.Model):
+#     name = models.CharField(max_length=255)
+
 # Create your models here.
 class post(models.Model):
     title =models.CharField(max_length=200)
