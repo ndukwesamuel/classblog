@@ -1,7 +1,13 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+    
 <h1> {{post.title}}</h1>
 
 <div>{{post.body}}</div>
-    
+
 <div>{{post.aurthor}}</div>
 
 
@@ -21,4 +27,7 @@
   <a href="{% url 'deletepost' post.pk   %}">delete</a>
 </div>
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur corrupti nobis recusandae aspernatur eum, perferendis esse sint molestiae similique earum quia ipsum, iure cumque mollitia debitis. Eos expedita rem et.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur corrupti nobis recusandae aspernatur eum, perferendis esse sint molestiae similique earum quia ipsum,
+
+
+{% endblock content %}

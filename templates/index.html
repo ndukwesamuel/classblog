@@ -1,18 +1,48 @@
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem mollitia accusamus eos architecto doloremque quam minima fugit consequuntur cum nihil non a velit repellendus, impedit illo expedita omnis recusandae ut.
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
 
 
-{%for post in object_list%}
-   <h1> <a href="{% url 'Blogdetail' post.pk   %}" >{{post.title}}</a> </h1>
+  <div class="row">
 
+    <div class=" col-md-3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptates exercitationem earum ut id, voluptate voluptatum ipsa cumque facilis quas quod, consequuntur provident nobis nam velit culpa neque aspernatur nihil. </div>
+  <div class=" col-md-6">
 
+    <div class="landing">
+
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente doloremque earum facere, porro quam illo, illum asperiores quod nisi impedit animi optio repudiandae suscipit. Mollitia quas nihil eos eum cupiditate.
+
+    </div>
+      
+      
+  {%for post in object_list%}
+  <h1> <a href="{% url 'Blogdetail' post.pk   %}" >{{post.title}}</a> </h1>
+  
+  
   <h1>  {{post.aurthor}}</h1>
-
+  
   <h3> {{post.body}}</h3>
-<div>
+  <div>
+   
+   <a href="{% url 'updatetview' post.pk   %}">edit</a>
+  
+   
+   <a href="{% url 'deletepost' post.pk   %}">delete</a>
+  </div>
+  {%endfor%}
     
-    <a href="{% url 'updatetview' post.pk   %}">edit</a>
+    </div>
+    <div class=" col-md-3"> 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro excepturi aperiam molestias at ex modi illum nesciunt labore veniam dolore, quaerat perferendis rerum dignissimos officia nemo, dolorem voluptatum provident voluptates.
+    </div>
+  
+  
+  </div>
 
-    
-    <a href="{% url 'deletepost' post.pk   %}">delete</a>
-</div>
-{%endfor%}
+
+{% endblock content %}
+
+

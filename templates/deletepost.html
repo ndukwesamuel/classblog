@@ -1,3 +1,9 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
 <h1>delete post</h1>
 
 
@@ -7,3 +13,5 @@
     {% csrf_token %}
     <button> delete oo</button>
 </form>
+
+{% endblock content %}
