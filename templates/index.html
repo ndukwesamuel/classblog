@@ -1,0 +1,18 @@
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem mollitia accusamus eos architecto doloremque quam minima fugit consequuntur cum nihil non a velit repellendus, impedit illo expedita omnis recusandae ut.
+
+
+{%for post in object_list%}
+   <h1> <a href="{% url 'Blogdetail' post.pk   %}" >{{post.title}}</a> </h1>
+
+
+  <h1>  {{post.aurthor}}</h1>
+
+  <h3> {{post.body}}</h3>
+<div>
+    
+    <a href="{% url 'updatetview' post.pk   %}">edit</a>
+
+    
+    <a href="{% url 'deletepost' post.pk   %}">delete</a>
+</div>
+{%endfor%}
