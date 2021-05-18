@@ -22,3 +22,18 @@ class post(models.Model):
         return reverse('home') 
 
 
+class Comment(models.Model):
+    post = models.ForeignKey(post, related_name='comments',  on_delete=models.CASCADE)
+    name = models.CharField(max_length=25)
+    body = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
+
+
+
+
+

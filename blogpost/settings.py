@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3#cvmxkyp1&91(e)bun-u@xm!it%c7lx7d4qm-34n6@@rf_6#a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['samheart-blog.herokuapp.com', '127.0.0.1']
 
@@ -122,7 +122,7 @@ AUTHENTICATION_BACKENDS = [
  
 ]
 
-WSGI_APPLICATION = 'blogpost.wsgi.application'
+# WSGI_APPLICATION = 'blogpost.wsgi.application'
 
 
 # Database

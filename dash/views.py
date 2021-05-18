@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # from django.views.generic import ListView, DetailViews
 from django.views import generic
-from dash.models import post
+from dash.models import post, Comment
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -44,4 +44,12 @@ class deleteview(generic.DeleteView):
     template_name = 'deletepost.html'
 
     success_url = reverse_lazy('home')
+
+
+class AddcommentViews(generic.CreateView):
+    model = Comment
+
+    template_name = 'add_Comment.html'
+
+    fields = '__all__'
 
