@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+{% if category_post %}
+
+<h1>{{cats}}</h1>
+
+
+{%   for post in category_post    %}
+
+    <h1>{{post}}</h1>
+
+{% endfor %}
+
+{%  else%}
+
+<h1> page does not exsit</h1>
+
+{% endif %}
+
+{% endblock content %}
+
+

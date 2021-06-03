@@ -3,17 +3,32 @@
 {% load static %}
 
 
+{% if user.is_authenticated %}
+        <div class="container">
+            <form action="" method="post">
+                {% csrf_token %}
 
-<form action="" method="post">
-    {% csrf_token %}
+                {{form.as_p}}
+            
+                <input type="submit" value="submit">
+            </form>
+            
+        </div>
 
-    {{form.as_p}}
+        {%else%}
 
-    <input type="submit" value="siii">
-</form>
-
-
-
+        <h1> pls login </h1>
+        <a href="">login</a>
+{% endif%}
 
 
+
+<script>
+    // var username = '{{user.username}}';
+    var username = '{{user.id}}';
+    document.getElementById('user_name').value= username
+    console.log(username)
+
+    console.log('we love you');
+</script>
 {% endblock content %}

@@ -5,28 +5,27 @@
 
 <h1>edit</h1>
 
-{{ user.id}}  {{post.aurthor.id}}
+<div>
+    user email: {{ user.email}} 
+</div> 
 
+<div>
+    aurthor email : {{post.aurthor.email}}
+
+</div>
 {% if user.is_authenticated %}
     {% if user.id == post.aurthor.id %}
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
 
-        <form action="" method="post">
-            {% csrf_token %}
-
-            {{form.as_p}}
-            dkfjdkfjk
-
-            <input type="submit" value="siii">
-        </form>
-
-
+        <input type="submit" value="submit">
+    </form>
+</div>
         {% else%}  
-
         <p>you are not the write of the post</p>
-
-    
     {% endif%}
-
 {% else%}  
 <h1>pls Go and login </h1>
 {%  endif %}

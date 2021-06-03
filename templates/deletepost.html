@@ -4,14 +4,33 @@
 {% block content %}
 {% load static %}
 
-<h1>delete post</h1>
+
+<div>
+    user email: {{ user}} 
+</div> 
+
+<div>
+    aurthor email : {{post.aurthor.email}}
+</div>
 
 
-<h1>delete {{post.title}}</h1>
+{% if user.is_authenticated %}
+    {% if user.id == post.aurthor.id %}
+            
+            <h1>delete {{post.title}}</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <button> delete oo</button>
+            </form>
 
-<form action="" method="post">
-    {% csrf_token %}
-    <button> delete oo</button>
-</form>
+    {%else%}
+    <h1> wrong page return to home</h1>
+    <a href=""> home</a>
+    {% endif%}
+
+{% else %}
+<h1>user log out pls login</h1>
+<a href=""> login </a>
+{%endif%}
 
 {% endblock content %}
